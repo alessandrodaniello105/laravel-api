@@ -1,7 +1,7 @@
 **Laravel Boolfolio - API**
 ===
 
-### Credenziali admin demo
+### Admin Demo Account
 #### email: admin@admin.it
 #### pwd: adminnnn
 
