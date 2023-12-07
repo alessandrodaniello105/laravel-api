@@ -1,0 +1,147 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+header {
+    height: 60px;
+}
+
+.main-wrapper {
+    height: calc(100% - 60px);
+    .section-container {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        background-color: antiquewhite;
+        .section {
+            height: 100%;
+        }
+    }
+}
+
+.cards-wrapper {
+    .col {
+        position:relative;
+        width: 341px;
+        height: 470px;
+        margin: 10px auto;
+        .card {
+            overflow: auto;
+            height: 100%;
+            .img-box {
+                position: relative;
+                background-color: rgba($color: #000000, $alpha: .8);
+                box-shadow: 0 0 10px #000000;
+                // overflow-x: auto;
+                img {
+                    object-fit: contain;
+                    height: 190px;
+                }
+                span.badge {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    box-shadow: 0 0 5px #000000;
+                }
+            }
+            .card-body {
+                .title-div,
+                .description-div {
+                    max-height: 50px;
+                    .card-title {
+                        text-overflow: ellipsis;
+                        // white-space: wrap;
+                        overflow: hidden;
+                        max-height: 50px;
+                    }
+                }
+                .description-div {
+                    .card-text{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        width: 185px;
+                        margin-bottom: 5px;
+                    }
+                }
+                .technologies-div {
+                    .badge {
+                        margin-right: 5px;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+aside {
+    width: 250px;
+    height: calc(100vh - 60px);
+    // margin-top: 60px;
+    ul {
+        list-style: none;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+#projects-list {
+    list-style: none;
+    li {
+        margin: 20px 0;
+    }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: rgba($color: #FAEBD7, $alpha: .3) !important;
+}
+
+.btn-colored {
+    background-color: #ae850073;
+    transition: .4s all;
+    a {
+        color: rgb(36, 23, 0);
+        text-decoration: none;
+    }
+}
+
+.btn-colored:hover {
+    background-color: #ae8500d5;
+}
+
+.text-danger-ctm {
+    color: red;
+    font-size: .8rem;
+    margin-top: 10px;
+}
+
+
+.btn-colored {
+    position: relative;
+    .btn-ctm {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        opacity: 0;
+        transition: .2s all;
+        i {
+            font-size: 13px;
+        }
+    }
+    &:hover {
+        .btn-ctm {
+            opacity: 1;
+            transition: .2s all;
+
+        }
+    }
+}
