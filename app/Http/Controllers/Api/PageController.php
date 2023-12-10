@@ -15,4 +15,14 @@ class PageController extends Controller
         return response()->json($projects);
 
     }
+
+    public function getProject($slug) {
+
+        $project = Project::where('slug', $slug)->with('type', 'technologies')->first();
+        if($project) $success = true;
+        else $success = false;
+
+        return response()->json(compact('project', 'success'));
+
+    }
 }
