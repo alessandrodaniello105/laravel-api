@@ -26,8 +26,10 @@ class PageController extends Controller
 
         // come altro dato all'api passo il link assoluto dell'immagine nello storage, se c'è
         // se non c'è passo il link dell'immagine placeholder
-        if($project->image) $project->image = asset('storage/' . $project->image);
-        else $project->image = asset('img/placeholder.webp');
+        if($success) {
+            if($project->image) $project->image = asset('storage/' . $project->image);
+            else $project->image = asset('img/placeholder.webp');
+        }
 
         return response()->json(compact('project', 'success'));
 
