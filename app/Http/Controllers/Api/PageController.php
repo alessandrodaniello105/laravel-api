@@ -32,4 +32,11 @@ class PageController extends Controller
         return response()->json(compact('project', 'success'));
 
     }
+
+    public function getLastProjects() {
+
+        $last_projects = Project::with('type','technologies')->orderBy('id', 'desc')->get();
+
+        return response()->json($last_projects);
+    }
 }
