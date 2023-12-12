@@ -36,7 +36,14 @@ class PageController extends Controller
     public function getLastProjects() {
 
         $last_projects = Project::with('type','technologies')->orderBy('id', 'desc')->get();
+        if($last_projects) $success = true;
+        else $success = false;
 
-        return response()->json($last_projects);
+        foreach ($last_projects as $project) {
+            if($project->image) $project->image = asset('storage/' . $project->image);
+            else $project->image = asset('img/placeholder.webp');
+        }
+
+        return response()->json(compact('last_projects', 'success'));
     }
 }
